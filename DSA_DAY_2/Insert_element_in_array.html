@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="arrayPosition" placeholder="Enter Array Position">
+    <input type="text" id="arrayValue" placeholder="Enter Array Value">
+    <button type="button" onclick="insertElement()">Insert Element</button>
+
+
+    <script>
+
+                // you can use splice method for insert array but we learn Data structure to improve your logic
+                
+              //  array.splice()
+
+        let insertElement = () => {
+
+            let considerArray = [10, 20, 30, 40, 50];
+
+            let myArrayValue = document.getElementById('arrayValue').value;
+
+            let getArrayPosition = document.getElementById('arrayPosition').value;
+
+            for (let index = considerArray.length - 1; index >= 0; index--) {
+
+                console.log(considerArray[index]);
+
+                if (index >= getArrayPosition) {
+
+                    considerArray[index + 1] = considerArray[index];
+
+                    if (index == getArrayPosition) {
+
+                        considerArray[index] = parseInt(myArrayValue);
+                    }
+
+                }
+            }
+
+            console.log(considerArray);
+
+        }
+
+
+    </script>
+
+
+    <script>
+
+        // consider random array
+
+        let arrayData = [10, 20, 30, 40, 50];
+
+        // insert new element in array
+        let newArray = 60;
+
+        // Insert element in array index position value 2
+        let ArrayIndexPosition = 2;
+
+
+        // Reverse array traversing (start reverse loop)
+        // In our senario loop start from 4 to 0
+        // to prevent undefine use -1 
+
+        for (let index = arrayData.length - 1; index >= 0; index--) {
+
+            console.log(arrayData[index]);
+            // check Index value greater than equal to array index position valiue
+            if (index >= ArrayIndexPosition) {
+
+                // replace array elements for insert new array element and to define position of array index  in our case position is 2
+
+                arrayData[index + 1] = arrayData[index];
+
+                // Check array index that fit to our given position 
+
+                if (index == ArrayIndexPosition) {
+
+                    // Add new element in array to our given array index position 
+                    arrayData[index] = newArray;
+                }
+
+            }
+
+        }
+
+        console.log(arrayData);
+
+    </script>
+</body>
+
+</html>

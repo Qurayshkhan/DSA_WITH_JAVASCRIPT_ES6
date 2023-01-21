@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="positionValue" placeholder="Enter Position of array">
+    <button onclick="removeElement()">Remove Element</button>
+
+
+    <script>
+
+
+        let removeElement = () => {
+
+            let arrayConsider = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+            let givenPosition = document.getElementById('positionValue').value;
+
+            for (let index = parseInt(givenPosition); index < arrayConsider.length - 1; index++) {
+
+                arrayConsider[index] = arrayConsider[index + 1];
+
+            }
+
+            arrayConsider.length = arrayConsider.length - 1;
+
+            console.warn(arrayConsider);
+
+        }
+
+        // consider array of data
+        let arrayData = [10, 20, 30, 40, 50];
+
+        // consider the position you to remove element form array
+        let position = 3;
+
+        // execute loop start from given position and it delete given index position value from array
+
+        for (let index = position; index < arrayData.length - 1; index++) {
+
+            // replace array with new index number 
+            arrayData[index] = arrayData[index + 1];
+
+        }
+
+        // it remove last repalce value form array like [10,20,30,50,50] to [10,20,30,50] 40 is remove from given position
+
+        arrayData.length = arrayData.length - 1;
+
+        // output
+        console.log(arrayData);
+    </script>
+</body>
+
+</html>
