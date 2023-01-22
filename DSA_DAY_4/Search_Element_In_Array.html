@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- get input Element of array from user -->
+
+    <input type="text" id="arrayItem">
+
+    <!-- click button to take input -->
+    <button onclick="searchElement()">click</button>
+
+
+
+
+
+    <script>
+        // consider an array
+        let arrayData = [10, 20, 30, 40, 50, 60, 70, 80];
+
+        // the search element of array
+        let item = 70;
+
+        // Take variable to store final result of search element
+        let position = undefined;
+
+        // Loop for Linearly search from array
+
+        for (let index = 0; index < arrayData.length - 1; index++) {
+
+            // check array index with given item 
+            if (arrayData[index] === item) {
+                // store index value into position variable
+                position = index;
+
+                // break loop if searched element found 
+                break;
+            }
+        }
+
+        // console the searched element 
+        console.log(position);
+
+        // Javascript byDefault method for search element in array
+        console.log(arrayData.indexOf(70));
+    </script>
+
+
+
+    <!-- seach Elemet by using input -->
+    <script>
+        let searchElement = () => {
+            let arrayData = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+            let item = document.getElementById('arrayItem').value;
+
+            let arrayIndexPosition = undefined;
+
+            for (let index = 0; index < arrayData.length - 1; index++) {
+
+                if (arrayData[index] === parseInt(item)) {
+
+                    arrayIndexPosition = index;
+                    break;
+                }
+
+            }
+
+            console.log(arrayIndexPosition);
+        }
+    </script>
+</body>
+
+</html>
